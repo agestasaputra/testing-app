@@ -28,17 +28,22 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: '~/plugins/utils/pageHandler.ts'
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // use composition-api in buildModules for jest, not modules
+    '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -71,5 +76,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  router: {
+    trailingSlash: false,
+    middleware: ['layoutHandler']
   }
 }
