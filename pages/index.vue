@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <!-- <index-desktop v-if="!isMobile" />
-    <index-mobile v-else /> -->
-    <Dashboard />
-    <!-- <h1> hai </h1> -->
-  </div>
+  <Dashboard />
 </template>
 
 <script>
